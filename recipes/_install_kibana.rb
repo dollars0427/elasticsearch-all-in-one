@@ -15,6 +15,13 @@ bash 'run_install-Kibana' do
   EOC
 end
 
+template "/opt/kibana/config/kibana.yml" do
+   mode 0644
+   owner "root"
+   group "root"
+   source "kibana.yml.erb"
+ end
+
 remote_file '/etc/init.d/kibana4' do
  source 'https://gist.githubusercontent.com/thisismitch/8b15ac909aed214ad04a/raw/bce61d85643c2dcdfbc2728c55a41dab444dca20/kibana4'
  checksum 'dfee621eb9e516ccca95e31c41284f8eb76807c25efa4d93a06de86b298dd08c'
