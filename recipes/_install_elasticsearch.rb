@@ -10,6 +10,13 @@ execute 'run_install-elasticsearch' do
  action :nothing
 end
 
+template "/etc/elasticsearch/elasticsearch.yml" do
+   mode 0644
+   owner "root"
+   group "root"
+   source "elasticsearch.yml.erb"
+ end
+
 bash 'run_autostart-elasticsearch' do
  user 'root'
  code <<-EOC
