@@ -1,10 +1,12 @@
 remote_file '/tmp/elasticsearch.deb' do
+ not_if { File.exist?('/tmp/elasticsearch.deb') }
  source 'https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.2.deb'
  checksum '791fb9f2131be2cf8c1f86ca35e0b912d7155a53f89c2df67467ca2105e77ec2'
  notifies :run, 'execute[run_install-elasticsearch]', :immediately
 end
 
 execute 'run_install-elasticsearch' do
+ not_if 'which elasticsearch'
  command 'dpkg -i /tmp/elasticsearch.deb || apt-get -f install -y'
  user 'root'
  action :nothing
