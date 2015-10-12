@@ -5,7 +5,7 @@ remote_file '/tmp/kibana.tar.gz' do
 end
 
 bash 'run_install-Kibana' do
- not_if { File.exist?('/opt/kibana') }
+ not_if { File.exist?(node["kibana"]["install_path"])}
  user 'root'
  code <<-EOC
     cd /tmp
