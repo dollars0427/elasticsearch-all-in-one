@@ -1,23 +1,13 @@
 elasticsearch-all-in-one Cookbook
 =================================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+A cookbook for install elasticsearch with kibana and td-agent.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
-#### packages
-- `toaster` - elasticsearch-all-in-one needs toaster to brown your bagel.
+Ubuntu 14.04
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
-e.g.
 #### elasticsearch-all-in-one::default
 <table>
   <tr>
@@ -27,20 +17,16 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['elasticsearch-all-in-one']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['kibana']['install_path']</tt></td>
+    <td>String</td>
+    <td>Where to install Kibana</td>
+    <td><tt>"/opt/kibana"</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### elasticsearch-all-in-one::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
-Just include `elasticsearch-all-in-one` in your node's `run_list`:
 
 ```json
 {
@@ -51,18 +37,6 @@ Just include `elasticsearch-all-in-one` in your node's `run_list`:
 }
 ```
 
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
-
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Mr.Twister
